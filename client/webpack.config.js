@@ -18,6 +18,14 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
+      new HtmlWebpackPlugin({
+        template: 'index.html',
+        title: 'Webpack Plugin',
+      }),
+      new InjectManifest({
+        sWSrc: './src-sw.js',
+        swDest: 'src-sw.js',
+      }),
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
