@@ -15,7 +15,7 @@ module.exports = () => {
     },
     output: {
       filename: '[name].bundle.js',
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, "dist"),
     },
     plugins: [
       new HtmlWebpackPlugin({
@@ -23,7 +23,7 @@ module.exports = () => {
         title: 'Webpack Plugin',
       }),
       new InjectManifest({
-        sWSrc: './src-sw.js',
+        swSrc: './src-sw.js',
         swDest: 'src-sw.js',
       }),
       new WebpackPwaManifest({
@@ -33,8 +33,8 @@ module.exports = () => {
         short_name: 'Note',
         description: 'Note taker for anytime of day',
         backgournd_color: '#225ca3',
-        start_url: './',
-        publicPath: './',
+        start_url: '/',
+        publicPath: '/',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
